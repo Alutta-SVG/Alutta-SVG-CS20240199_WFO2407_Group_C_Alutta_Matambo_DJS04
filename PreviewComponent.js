@@ -18,6 +18,7 @@ class BookPreview extends HTMLElement {
         const title = this.getAttribute('data-title') || 'Unknown Title';
         const author = this.getAttribute('data-author') || 'Unknown Author';
         const id = this.getAttribute('data-preview') || 'unknown-id';
+        console.log(image);
 
         this.shadowRoot.innerHTML = `
             <style>
