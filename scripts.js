@@ -108,24 +108,32 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const initEventListeners = () => {
-        document.querySelector('[data-list-form]').addEventListener('submit', handleSettingsFormSubmit);
-        document.querySelector('[data-search-form]').addEventListener('submit', handleSearchFormSubmit);
-        document.querySelector('[data-list-button]').addEventListener('click', handleShowMoreButtonClick);
-        document.querySelector('[data-header-search]').addEventListener('click', () => {
+        const listForm = document.querySelector('[data-list-form]');
+        const searchForm = document.querySelector('[data-search-form]');
+        const listButton = document.querySelector('[data-list-button]');
+        const headerSearch = document.querySelector('[data-header-search]');
+        const headerSettings = document.querySelector('[data-header-settings]');
+        const searchCancel = document.querySelector('[data-search-cancel]');
+        const settingsCancel = document.querySelector('[data-settings-cancel]');
+    
+        if (listForm) listForm.addEventListener('submit', handleSettingsFormSubmit);
+        if (searchForm) searchForm.addEventListener('submit', handleSearchFormSubmit);
+        if (listButton) listButton.addEventListener('click', handleShowMoreButtonClick);
+        if (headerSearch) headerSearch.addEventListener('click', () => {
             document.querySelector('[data-search-overlay]').setAttribute('open', true);
             document.querySelector('[data-search-title]').focus();
         });
-        document.querySelector('[data-header-settings]').addEventListener('click', () => {
+        if (headerSettings) headerSettings.addEventListener('click', () => {
             document.querySelector('[data-settings-overlay]').setAttribute('open', true);
         });
-        document.querySelector('[data-search-cancel]').addEventListener('click', () => {
+        if (searchCancel) searchCancel.addEventListener('click', () => {
             document.querySelector('[data-search-overlay]').removeAttribute('open');
         });
-        document.querySelector('[data-settings-cancel]').addEventListener('click', () => {
+        if (settingsCancel) settingsCancel.addEventListener('click', () => {
             document.querySelector('[data-settings-overlay]').removeAttribute('open');
         });
     };
-
+    
     // Initial setup
     initTheme();
     populateDropdown(document.querySelector('[data-search-genres]'), genres, 'All Genres');

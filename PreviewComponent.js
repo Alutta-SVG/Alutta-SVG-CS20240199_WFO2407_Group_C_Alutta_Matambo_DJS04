@@ -14,11 +14,11 @@ class BookPreview extends HTMLElement {
     }
 
     render() {
-        const image = this.getAttribute('data-image')
+        const image = this.getAttribute('data-image') || 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348471955i/120009.jpg';
         const title = this.getAttribute('data-title') || 'Unknown Title';
         const author = this.getAttribute('data-author') || 'Unknown Author';
         const id = this.getAttribute('data-preview') || 'unknown-id';
-        console.log(image);
+       
 
         this.shadowRoot.innerHTML = `
             <style>
