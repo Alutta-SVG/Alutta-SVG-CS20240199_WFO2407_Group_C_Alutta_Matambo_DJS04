@@ -4,7 +4,8 @@ import './PreviewComponent.js';
 
 // Wait until the DOM is fully loaded to run the script
 document.addEventListener('DOMContentLoaded', () => {
-    let page = 1; // Track the current page for pagination
+
+    let page = 1; // Track the current page 
     let matches = books; // Store the list of books to be displayed based on filters
 
     // Display book details in the console 
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchCancel = document.querySelector('[data-search-cancel]');
         const settingsCancel = document.querySelector('[data-settings-cancel]');
     
-        // Add event listeners if elements exist in the DOM
+        // Add event listeners of elements that exist in the DOM
         if (listForm) listForm.addEventListener('submit', handleSettingsFormSubmit);
         if (searchForm) searchForm.addEventListener('submit', handleSearchFormSubmit);
         if (listButton) listButton.addEventListener('click', handleShowMoreButtonClick);
