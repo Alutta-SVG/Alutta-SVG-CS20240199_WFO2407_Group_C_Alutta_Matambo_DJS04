@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display book details (define this function)
     const displayBookDetails = (book) => {
         console.log(book);
-        // Implement your display logic here, e.g., show a modal with book details
+        
     };
 
     /**
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * @returns {Array} - Filtered list of books
  */
 
-    
+
 
 
     const filterBooks = (filters) => {

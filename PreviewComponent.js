@@ -9,14 +9,15 @@ class BookPreview extends HTMLElement {
         return ['data-image', 'data-title', 'data-author', 'data-preview'];
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback() {
         this.render(); // Re-render when attributes change
     }
+
     render() {
-        const image = this.getAttribute('data-image');
-        const title = this.getAttribute('data-title');
-        const author = this.getAttribute('data-author');
-        const id = this.getAttribute('data-preview');
+        const image = this.getAttribute('data-image')
+        const title = this.getAttribute('data-title') || 'Unknown Title';
+        const author = this.getAttribute('data-author') || 'Unknown Author';
+        const id = this.getAttribute('data-preview') || 'unknown-id';
 
         this.shadowRoot.innerHTML = `
             <style>
